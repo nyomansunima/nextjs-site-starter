@@ -1,8 +1,26 @@
-@import '@flaticon/flaticon-uicons/css/all/all.css';
+@import '@flaticon/flaticon-uicons/css/all/all.css' layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@config '../../../tailwind.config.ts';
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 @layer base {
   :root {
@@ -20,18 +38,20 @@
   }
 }
 
-.dark {
-  --color-background: 0 0 0%;
-  --color-foreground: 0 0 75%;
-  --color-surface: 0 0 0%;
-  --color-border: 0 0 12%;
-  --color-input: 0 0 10%;
-  --color-primary: 0 0 90%;
-  --color-primary-foreground: 0 0 90%;
-  --color-secondary: 0 0 19%;
-  --color-secondary-foreground: 0 0 65%;
-  --color-link: 213 94 68%;
-  --color-accent: 0 0 60%;
+@layer utilities {
+  .dark {
+    --color-background: 0 0 0%;
+    --color-foreground: 0 0 75%;
+    --color-surface: 0 0 0%;
+    --color-border: 0 0 12%;
+    --color-input: 0 0 10%;
+    --color-primary: 0 0 90%;
+    --color-primary-foreground: 0 0 90%;
+    --color-secondary: 0 0 19%;
+    --color-secondary-foreground: 0 0 65%;
+    --color-link: 213 94 68%;
+    --color-accent: 0 0 60%;
+  }
 }
 
 @layer base {
@@ -44,7 +64,7 @@
   }
 
   body {
-    @apply text-base font-normal !leading-normal text-foreground bg-background font-sans subpixel-antialiased selection:bg-blue-100/90 selection:text-blue-950;
+    @apply text-base font-normal leading-normal! text-foreground bg-background font-sans subpixel-antialiased selection:bg-blue-100/90 selection:text-blue-950;
     font-style: normal;
   }
 
