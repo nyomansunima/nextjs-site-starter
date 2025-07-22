@@ -5,11 +5,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint:check": "next lint",
-    "lint": "next lint --fix",
     "typecheck": "tsc",
-    "format:check": "prettier --check .",
-    "format": "prettier --write . --list-different"
+    "lint": "next lint --fix",
+    "format": "prettier . --write --list-different"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",
