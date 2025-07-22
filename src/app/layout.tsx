@@ -2,8 +2,8 @@ import * as React from 'react'
 import type { Metadata } from 'next'
 import '@shared/styles/globals.css'
 import { config, sharedMetadata } from '@shared/libs'
-import { ThemeProvider, PosthogProvider } from '@shared/providers'
-import { Footer, Header, Toaster, CenteredLayout } from '@shared/components'
+import { ThemeProvider } from '@shared/providers'
+import { Footer, Header, CenteredLayout } from '@shared/components'
 import { fonts } from '@shared/fonts'
 
 export const metadata: Metadata = {
@@ -57,25 +57,20 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${fonts.inter.variable}`}
     >
-      <PosthogProvider>
-        <body suppressHydrationWarning>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem={true}
-            disableTransitionOnChange
-          >
-            <CenteredLayout>
-              <Header />
-              <main className="min-h-screen pb-28 tablet:pb-56">
-                {children}
-              </main>
-              <Footer />
-            </CenteredLayout>
-            <Toaster />
-          </ThemeProvider>
-        </body>
-      </PosthogProvider>
+      <body suppressHydrationWarning>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem={true}
+          disableTransitionOnChange
+        >
+          <CenteredLayout>
+            <Header />
+            <main className="min-h-screen pb-28 tablet:pb-56">{children}</main>
+            <Footer />
+          </CenteredLayout>
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
