@@ -1,16 +1,17 @@
-import { NextConfig } from 'next'
+import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
+  reactCompiler: true,
   experimental: {
-    optimizePackageImports: ['@flaticon/flaticon-uicons'],
+    optimizePackageImports: ["@flaticon/flaticon-uicons"],
   },
-  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   images: {
     remotePatterns: [
-      { hostname: 'cdn.dribbble.com' },
-      { hostname: 'cdn.hashnode.com' },
-      { hostname: 'images.unsplash.com' },
-      { hostname: 'via.placeholder.com' },
+      { hostname: "cdn.dribbble.com" },
+      { hostname: "cdn.hashnode.com" },
+      { hostname: "images.unsplash.com" },
+      { hostname: "via.placeholder.com" },
     ],
   },
   skipTrailingSlashRedirect: true,

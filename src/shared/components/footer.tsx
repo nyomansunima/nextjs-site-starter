@@ -1,14 +1,14 @@
-import * as React from 'react'
-import Link from 'next/link'
-import { mergeClass } from '@shared/utils'
+import * as React from "react"
+import Link from "next/link"
+import { mergeClass } from "@shared/utils"
 
 const footerMenus = [
-  { label: 'Privacy policy', href: '/privacy' },
-  { label: 'Terms of use', href: '/terms' },
-  { label: 'FAQs', href: '/faqs' },
+  { label: "Privacy policy", href: "/privacy" },
+  { label: "Terms of use", href: "/terms" },
+  { label: "FAQs", href: "/faqs" },
 ]
 
-type MenuItemProps = {
+interface MenuItemProps {
   href: string
   children?: React.ReactNode
   className?: string
@@ -22,7 +22,7 @@ export function MenuItem({
   return (
     <li
       className={`${mergeClass(
-        'flex items-center justify-center text-sm p-1 rounded-xl bg-transparent transition-all hover:-translate-y-1 hover:text-foreground/60 duration-300',
+        "flex items-center justify-center text-sm p-1 rounded-xl bg-transparent transition-all hover:-translate-y-1 hover:text-foreground/60 duration-300",
         className,
       )}`}
     >

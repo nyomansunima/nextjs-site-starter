@@ -1,8 +1,8 @@
-'use client'
+"use client"
 
-import '@shared/styles/globals.css'
-import { Button, CenteredLayout } from '@shared/components'
-import { fonts } from '@shared/fonts'
+import "@shared/styles/globals.css"
+import { Button, CenteredLayout } from "@shared/components"
+import { fonts } from "@shared/fonts"
 
 export default function GlobalError({
   reset,
@@ -31,7 +31,7 @@ export default function GlobalError({
             </p>
 
             <div className="mt-16 flex justify-center">
-              <Button variant={'text'} size={'lg'} onClick={() => reset()}>
+              <Button variant={"text"} size={"lg"} onClick={() => reset()}>
                 Try again
                 <i className="fi fi-rr-spinner" />
               </Button>

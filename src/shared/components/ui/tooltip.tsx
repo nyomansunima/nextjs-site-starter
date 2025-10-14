@@ -1,8 +1,8 @@
-'use client'
+"use client"
 
-import * as React from 'react'
-import * as TooltipPrimitive from '@radix-ui/react-tooltip'
-import { mergeClass } from '@shared/utils'
+import * as React from "react"
+import * as TooltipPrimitive from "@radix-ui/react-tooltip"
+import { mergeClass } from "@shared/utils"
 
 const TooltipProvider = TooltipPrimitive.Provider
 
@@ -10,20 +10,26 @@ const Tooltip = TooltipPrimitive.Root
 
 const TooltipTrigger = TooltipPrimitive.Trigger
 
-const TooltipContent = React.forwardRef<
-  React.ComponentRef<typeof TooltipPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
->(({ className, sideOffset = 4, ...props }, ref) => (
+const TooltipContent = ({
+  ref,
+  className,
+  sideOffset = 4,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content> & {
+  ref?: React.RefObject<React.ComponentRef<
+    typeof TooltipPrimitive.Content
+  > | null>
+}) => (
   <TooltipPrimitive.Content
     ref={ref}
     sideOffset={sideOffset}
     className={mergeClass(
-      'z-50 overflow-hidden rounded-xl border border-border bg-surface px-3 py-1.5 text-xs text-foreground/70',
+      "z-50 overflow-hidden rounded-xl border border-border bg-surface px-3 py-1.5 text-xs text-foreground/70",
       className,
     )}
     {...props}
   />
-))
+)
 TooltipContent.displayName = TooltipPrimitive.Content.displayName
 
 export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider }

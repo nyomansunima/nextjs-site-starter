@@ -1,45 +1,45 @@
-import * as React from 'react'
-import type { Metadata } from 'next'
-import '@shared/styles/globals.css'
-import { config, sharedMetadata } from '@shared/libs'
-import { ThemeProvider } from '@shared/providers'
-import { Footer, Header, CenteredLayout } from '@shared/components'
-import { fonts } from '@shared/fonts'
+import * as React from "react"
+import type { Metadata } from "next"
+import "@shared/styles/globals.css"
+import { config, sharedMetadata } from "@shared/libs"
+import { ThemeProvider } from "@shared/providers"
+import { Footer, Header, CenteredLayout } from "@shared/components"
+import { fonts } from "@shared/fonts"
 
 export const metadata: Metadata = {
-  title: 'Nyoman Sunima',
+  title: "Nyoman Sunima",
   description:
-    'Focused on crafting digital products, website, web app, mobile app to help business.',
+    "Focused on crafting digital products, website, web app, mobile app to help business.",
   openGraph: {
     ...sharedMetadata.openGraph,
-    title: 'Nyoman Sunima',
+    title: "Nyoman Sunima",
     description:
-      'Focused on crafting digital products, website, web app, mobile app to help business.',
+      "Focused on crafting digital products, website, web app, mobile app to help business.",
   },
   twitter: {
     ...sharedMetadata.twitter,
-    title: 'Nyoman Sunima',
+    title: "Nyoman Sunima",
     description:
-      'Focused on crafting digital products, website, web app, mobile app to help business.',
+      "Focused on crafting digital products, website, web app, mobile app to help business.",
   },
-  applicationName: 'Nyoman Sunima',
+  applicationName: "Nyoman Sunima",
   keywords: [
-    'Product Designer',
-    'UI UX Designer',
-    'Web Designer',
-    'Shopify Developer',
-    'Web Developer',
-    'Webflow Expert',
-    'Framer Expert',
-    'Squarespace',
-    'Wix Developer',
-    'Fullstack',
-    'Mobile Developer',
-    'Indie Hacker',
+    "Product Designer",
+    "UI UX Designer",
+    "Web Designer",
+    "Shopify Developer",
+    "Web Developer",
+    "Webflow Expert",
+    "Framer Expert",
+    "Squarespace",
+    "Wix Developer",
+    "Fullstack",
+    "Mobile Developer",
+    "Indie Hacker",
   ],
-  authors: [{ name: 'Nyoman Sunima' }],
-  publisher: 'Nyoman Sunima',
-  creator: 'Nyoman Sunima',
+  authors: [{ name: "Nyoman Sunima" }],
+  publisher: "Nyoman Sunima",
+  creator: "Nyoman Sunima",
   metadataBase: new URL(config.app.host),
   verification: {
     google: config.verification.google,

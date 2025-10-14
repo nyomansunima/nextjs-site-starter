@@ -1,8 +1,8 @@
-import Image from 'next/image'
-import * as React from 'react'
-import { mergeClass } from '@shared/utils'
+import Image from "next/image"
+import * as React from "react"
+import { mergeClass } from "@shared/utils"
 
-type ArticleContentProps = {
+interface ArticleContentProps {
   children: React.ReactNode
   className?: string
 }
@@ -12,13 +12,13 @@ export function ArticleContent({
   className,
 }: ArticleContentProps): React.ReactElement {
   return (
-    <article className={`${mergeClass('prose', className)}`}>
+    <article className={`${mergeClass("prose", className)}`}>
       {children}
     </article>
   )
 }
 
-type ContentImageProps = {
+interface ContentImageProps {
   src: string
   alt: string
   height?: number
@@ -34,7 +34,7 @@ export function ContentImage({
   return (
     <div
       className={`${mergeClass(
-        'flex rounded-2xl p-1 border border-border bg-surface cursor-pointer my-4',
+        "flex rounded-2xl p-1 border border-border bg-surface cursor-pointer my-4",
         className,
       )}`}
     >

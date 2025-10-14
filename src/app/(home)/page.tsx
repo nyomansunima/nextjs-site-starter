@@ -1,19 +1,19 @@
-import * as React from 'react'
-import { Metadata } from 'next'
-import { sharedMetadata } from '@shared/libs'
+import * as React from "react"
+import type { Metadata } from "next"
+import { sharedMetadata } from "@shared/libs"
 
 export const metadata: Metadata = {
-  title: 'YOUR_TITLE_META_TAG',
-  description: 'YOUR_DESCRIPTION_META_TAG',
+  title: "YOUR_TITLE_META_TAG",
+  description: "YOUR_DESCRIPTION_META_TAG",
   openGraph: {
     ...sharedMetadata.openGraph,
-    title: 'YOUR_TITLE_META_TAG',
-    description: 'YOUR_DESCRIPTION_META_TAG',
+    title: "YOUR_TITLE_META_TAG",
+    description: "YOUR_DESCRIPTION_META_TAG",
   },
   twitter: {
     ...sharedMetadata.twitter,
-    title: 'YOUR_TITLE_META_TAG',
-    description: 'YOUR_DESCRIPTION_META_TAG',
+    title: "YOUR_TITLE_META_TAG",
+    description: "YOUR_DESCRIPTION_META_TAG",
   },
 }
 

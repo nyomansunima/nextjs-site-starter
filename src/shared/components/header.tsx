@@ -1,12 +1,12 @@
-'use client'
-import * as React from 'react'
-import Link from 'next/link'
+"use client"
+import * as React from "react"
+import Link from "next/link"
 
 export function Brand(): React.ReactElement {
   return (
     <div className="text-sm gap-3 flex relative z-10">
       <Link
-        href={'/'}
+        href={"/"}
         className="transition-all duration-300 hover:-translate-x-1"
       >
         <span className="font-medium">yourbrand.domain</span>
