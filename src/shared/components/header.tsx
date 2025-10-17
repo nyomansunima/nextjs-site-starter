@@ -1,29 +1,29 @@
-"use client"
-import * as React from "react"
-import Link from "next/link"
+"use client";
+import Link from "next/link";
+import type * as React from "react";
 
 export function Brand(): React.ReactElement {
   return (
-    <div className="text-sm gap-3 flex relative z-10">
+    <div className="relative z-10 flex gap-3 text-sm">
       <Link
+        className="hover:-translate-x-1 transition-all duration-300"
         href={"/"}
-        className="transition-all duration-300 hover:-translate-x-1"
       >
         <span className="font-medium">yourbrand.domain</span>
       </Link>
     </div>
-  )
+  );
 }
 
 export function Actions(): React.ReactElement {
-  return <div className="flex relative z-10 gap-2"></div>
+  return <div className="relative z-10 flex gap-2" />;
 }
 
 export function Header(): React.ReactElement {
   return (
-    <header className="flex items-center justify-between h-24 tablet:h-36">
+    <header className="flex h-24 tablet:h-36 items-center justify-between">
       <Brand />
       <Actions />
     </header>
-  )
+  );
 }

@@ -1,6 +1,6 @@
 // TODO: Add your config here
 export const config = {
-  isProduction: process.env.NODE_ENV === "production" || false,
+  isProduction: process.env.NODE_ENV === "production",
   app: {
     host: process.env.NEXT_PUBLIC_APP_HOST || "http://localhost:3000",
   },
@@ -10,4 +10,4 @@ export const config = {
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || "",
   },
-} as const
+} as const;

@@ -1,18 +1,18 @@
-import * as React from "react"
-import Link from "next/link"
-import { mergeClass } from "@shared/utils"
+import { mergeClass } from "@shared/utils";
+import Link from "next/link";
+import type * as React from "react";
 
 const footerMenus = [
   { label: "Privacy policy", href: "/privacy" },
   { label: "Terms of use", href: "/terms" },
   { label: "FAQs", href: "/faqs" },
-]
+];
 
-interface MenuItemProps {
-  href: string
-  children?: React.ReactNode
-  className?: string
-}
+type MenuItemProps = {
+  href: string;
+  children?: React.ReactNode;
+  className?: string;
+};
 
 export function MenuItem({
   href,
@@ -22,15 +22,15 @@ export function MenuItem({
   return (
     <li
       className={`${mergeClass(
-        "flex items-center justify-center text-sm p-1 rounded-xl bg-transparent transition-all hover:-translate-y-1 hover:text-foreground/60 duration-300",
-        className,
+        "hover:-translate-y-1 flex items-center justify-center rounded-xl bg-transparent p-1 text-sm transition-all duration-300 hover:text-foreground/60",
+        className
       )}`}
     >
-      <Link href={href} className="w-full h-full">
+      <Link className="h-full w-full" href={href}>
         {children}
       </Link>
     </li>
-  )
+  );
 }
 
 export function FooterMenuList(): React.ReactElement {
@@ -38,24 +38,24 @@ export function FooterMenuList(): React.ReactElement {
     <div className="flex">
       <ul className="flex items-center gap-2">
         {footerMenus.map((item, index) => (
-          <MenuItem key={index} href={item.href}>
+          <MenuItem href={item.href} key={index}>
             {item.label}
           </MenuItem>
         ))}
       </ul>
     </div>
-  )
+  );
 }
 
 export function Footer(): React.ReactElement {
   return (
     <footer className="flex flex-col" id="footer">
-      <div className="flex flex-col tablet:flex-row tablet:items-center py-7 tablet:justify-between mt-8">
-        <span className="text-sm cursor-pointer">
+      <div className="mt-8 flex tablet:flex-row flex-col tablet:items-center tablet:justify-between py-7">
+        <span className="cursor-pointer text-sm">
           Copyright &copy; 2024 - Alright Reserved
         </span>
         <FooterMenuList />
       </div>
     </footer>
-  )
+  );
 }

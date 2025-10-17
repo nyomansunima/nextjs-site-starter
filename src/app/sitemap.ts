@@ -1,7 +1,7 @@
-import { config } from "@shared/libs"
-import type { MetadataRoute } from "next"
+import { config } from "@shared/libs";
+import type { MetadataRoute } from "next";
 
-const BASE_URL = config.app.host
+const BASE_URL = config.app.host;
 
 // TODO: Add your sitemap of your site here
 // Please ensure that the url is correct
@@ -19,5 +19,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE_URL}/privacy`,
       lastModified: new Date().toISOString(),
     },
-  ]
+  ];
 }

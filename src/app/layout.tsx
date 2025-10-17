@@ -1,10 +1,10 @@
-import * as React from "react"
-import type { Metadata } from "next"
-import "@shared/styles/globals.css"
-import { config, sharedMetadata } from "@shared/libs"
-import { ThemeProvider } from "@shared/providers"
-import { Footer, Header, CenteredLayout } from "@shared/components"
-import { fonts } from "@shared/fonts"
+import type { Metadata } from "next";
+import type * as React from "react";
+import "@shared/styles/globals.css";
+import { CenteredLayout, Footer, Header } from "@shared/components";
+import { fonts } from "@shared/fonts";
+import { config, sharedMetadata } from "@shared/libs";
+import { ThemeProvider } from "@shared/providers";
 
 export const metadata: Metadata = {
   title: "Nyoman Sunima",
@@ -44,25 +44,25 @@ export const metadata: Metadata = {
   verification: {
     google: config.verification.google,
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }): React.ReactElement {
   return (
     <html
+      className={`${fonts.inter.variable}`}
       lang="en"
       suppressHydrationWarning
-      className={`${fonts.inter.variable}`}
     >
       <body suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
-          enableSystem={true}
           disableTransitionOnChange
+          enableSystem={true}
         >
           <CenteredLayout>
             <Header />
@@ -72,5 +72,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }

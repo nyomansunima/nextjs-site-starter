@@ -1,17 +1,17 @@
-import * as React from "react"
+import type * as React from "react";
 
-interface CenteredLayoutProps {
-  children: React.ReactNode
-}
+type CenteredLayoutProps = {
+  children: React.ReactNode;
+};
 
 export function CenteredLayout({
   children,
 }: CenteredLayoutProps): React.ReactElement {
   return (
-    <div className="px-5 laptop:px-0 container mx-auto">
-      <div className="mx-auto w-full tablet:w-11/12 laptop:w-9/12 desktop:w-7/12 laptop:px-20">
+    <div className="container mx-auto laptop:px-0 px-5">
+      <div className="mx-auto desktop:w-7/12 laptop:w-9/12 tablet:w-11/12 w-full laptop:px-20">
         {children}
       </div>
     </div>
-  )
+  );
 }

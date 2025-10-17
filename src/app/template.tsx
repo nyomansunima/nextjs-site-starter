@@ -1,12 +1,12 @@
-import * as React from "react"
-import { PageTransition } from "@shared/components"
+import { PageTransition } from "@shared/components";
+import type * as React from "react";
 
-interface RootTemplateProps {
-  children: React.ReactNode
-}
+type RootTemplateProps = {
+  children: React.ReactNode;
+};
 
 export default function RootTemplate({
   children,
 }: RootTemplateProps): React.ReactElement {
-  return <PageTransition>{children}</PageTransition>
+  return <PageTransition>{children}</PageTransition>;
 }
