@@ -32,6 +32,6 @@
     "tailwindcss": "^4.1.16",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.9.3",
-    "ultracite": "6.4.1"
+    "ultracite": "6.5.0"
   }
 }
